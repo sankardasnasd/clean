@@ -1,0 +1,12 @@
+{% extends 'admin/home.html' %}
+{% block body %}
+<form method="post" action="/clean_app/wasteedit_post/">
+    {% csrf_token %}
+        <input type="hidden" name="id" placeholder="Enter waste Type" value="{{ var.id }}">
+
+    <input type="text" class="form-control" name="name" placeholder="Enter waste Type" value="{{ var.type }}">
+<input type="text" class="form-control" name="price" placeholder="Enter waste price" value="{{ var.price }}">
+<input type="submit" class="btn btn-success" value="Submit">
+</form>
+
+{% endblock %}

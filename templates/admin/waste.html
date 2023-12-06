@@ -1,0 +1,33 @@
+{% extends 'admin/home.html' %}
+{% block body %}
+<form method="post" action="/clean_app/waste_post/">
+    {% csrf_token %}
+    <table border="1" class="table table-hover table-bordered table-stripped">
+
+    <tr>
+        <th></th>
+        <th>
+            <select name="name" class="form-control">
+        <option value="Plastics" name="">Plastics</option>
+                <option value="E-Waste" name="">E-Waste</option>
+                <option value="Biomedical " name="">Biomedical Waste</option>
+        <option value="Plastics" name="">Plastics</option>
+
+    </select>
+        </th>
+    </tr>
+        <tr>
+            <th></th>
+            <th><input type="text" class="form-control"  pattern='[0-9]+(\\.[0-9][0-9]?)?' name="price" placeholder="Enter waste price"></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th>
+                <div class="text-center">
+                    <input class="btn btn-success" value="Submit" type="submit">
+                </div>
+            </th>
+        </tr>
+    </table>
+</form>
+{% endblock %}

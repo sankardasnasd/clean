@@ -1,0 +1,42 @@
+{% extends 'recycler/recycler_homepage.html' %}
+{% block body %}
+<table border="1" class="table table-hover table-bordered table-stripped">
+
+
+
+    <tr>
+        <th>Unit Name</th>
+        <td>{{ var.unit_name }}</td>
+    </tr>
+    <tr>
+        <th>Place</th>
+        <td>{{ var.place }}</td>
+    </tr>
+    <tr>
+        <th>Post</th>
+        <td>{{ var.post }}</td>
+    </tr>
+    <tr>
+        <th>Pin</th>
+        <td>{{ var.pin }}</td>
+    </tr>
+    <tr>
+        <th>District</th>
+        <td>{{ var.district }}</td>
+    </tr>
+    <tr>
+        <th>Phone</th>
+        <td>{{ var.phone }}</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>{{ var.email }}</td>
+    </tr>
+    <tr>
+        <th></th>
+        <th><a href="/clean_app/recycler_edit/{{ var.id }}" class="btn btn-success">Edit</a> </th>
+    </tr>
+
+</table>
+
+{% endblock %}

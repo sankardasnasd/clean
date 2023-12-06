@@ -1,0 +1,38 @@
+{% extends 'recycler/recycler_homepage.html' %}
+{% block body %}
+
+    <form method="post" action="">
+    {% csrf_token %}
+
+    <table border="1" class="table table-hover table-bordered table-stripped">
+    <tr class="pull-left">
+        <td><input type="text" class="form-control" name="searching" placeholder="enter user name"></td>
+        <td><input type="submit" value="search" class="btn btn-success"></td>
+    </tr>
+</table>
+
+<table border="1" class="table table-hover table-bordered table-stripped">
+    <tr>
+        <th>Sl no</th>
+        <th>User Name</th>
+        <th>Date</th>
+        <th>Request</th>
+        <th>Status</th>
+
+
+
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.USER.name }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.request }}</td>
+        <td>{{ i.status }}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+    </form>
+
+{% endblock %}

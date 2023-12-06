@@ -1,0 +1,35 @@
+{% extends 'admin/home.html' %}
+{% block body %}
+
+
+   <form method="post" action="/clean_app/view_feedback_post/">
+   {% csrf_token %}
+    <table border="1" class="table table-hover table-bordered table-stripped">
+    <tr class="pull-left">
+        <td>From Date</td>
+        <td><input type="date" class="form-control" name="fromsearch" placeholder="" required></td>
+        <td>To Date</td>
+        <td><input type="date" class="form-control" name="to" placeholder="" required></td>
+        <td><input type="submit" value="search" class="btn btn-success"></td>
+    </tr>
+</table>
+
+
+<table border="1" class="table table-hover table-bordered table-stripped">
+    <tr>
+        <th>Sl No</th>
+        <th>User Name</th>
+        <th>Date</th>
+        <th>Feedback</th>
+
+    </tr>
+{% for i in var %}    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.USER.name }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.feedback }}</td>
+    </tr>
+    {% endfor %}
+</table>
+   </form>
+{% endblock %} }

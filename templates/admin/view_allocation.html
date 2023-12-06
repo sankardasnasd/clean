@@ -1,0 +1,49 @@
+{% extends 'admin/home.html' %}
+{% block body %}
+
+
+<form method="post" action="/clean_app/view_allocation_post/">
+{% csrf_token %}
+<table border="1" class="table table-hover table-bordered table-stripped">
+    <tr class="pull-left">
+        <td><input type="text" class="form-control" required name="search" placeholder="Enter Worker Name "></td>
+        <td><input type="submit" value="search" class="btn btn-success"></td>
+    </tr>
+{#    <tr class="pull-left">#}
+{#        <td>#}
+{##}
+{#            <select name="area">#}
+{#            <option hidden>Area</option>#}
+{#                {% for i in data2 %}#}
+{#            <option value="{{ i.area }}">{{ i.area }}</option>#}
+{#                {% endfor %}#}
+{#        </select>#}
+{#       </td>#}
+{#        <td><input type="submit" value="search" class="btn btn-success"></td>#}
+{#    </tr>#}
+</table>
+{% csrf_token %}
+<table border="1" class="table table-hover table-bordered table-stripped">
+        <tr>
+            <th>Sl no</th>
+            <th>Worker name</th>
+            <th>Area</th>
+            <th>Date</th>
+            <th>Status</th>
+            <td></td>
+            <td></td>
+        </tr>
+        {% for i in data %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ i.WORKER.name }}</td>
+          <td>{{ i.area }}</td>
+          <td>{{ i.date }}</td>
+          <td>{{ i.status }}</td>
+          <td><a href="/clean_app/edit_allocation/{{ i.id }}" class="btn btn-success">Edit</a> </td>
+          <td><a href="/clean_app/delete_allocation/{{ i.id }}" class="btn btn-danger">Delete</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+{% endblock %}

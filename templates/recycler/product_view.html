@@ -1,0 +1,25 @@
+{% extends 'recycler/recycler_homepage.html' %}
+{% block body %}
+<table border="1" class="table table-hover table-bordered table-stripped">
+    <tr>
+        <th>Sl no</th>
+        <th>Product Name</th>
+        <th>Amount</th>
+        <th>Recycler Unit Name</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for i in data %}
+    <tr>
+
+        <th>{{ forloop.counter }}</th>
+        <th>{{ i.name }}</th>
+        <th>{{ i.amount }}</th>
+        <th>{{ i.RECYCLE.unit_name }}</th>
+        <th><a href="/clean_app/product_edit/{{ i.id }}" class="btn btn-success">Edit</a> </th>
+        <th><a href="/clean_app/product_delete/{{ i.id }}" class="btn btn-danger">Delete</a> </th>
+    </tr>
+{% endfor %}
+</table>
+
+{% endblock %}

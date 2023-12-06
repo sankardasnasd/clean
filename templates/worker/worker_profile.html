@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="/clean_app/worker_post/">
+    {% csrf_token %}
+    <table width="482" border="1">
+  <tr>
+    <td width="161">Name</td>
+    <td width="305" >
+        {{ var.name  }}
+    </td>
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td>
+      <label for="phone"></label>
+{{ var.phone }}
+    </td>
+  </tr>
+         <tr>
+    <td>Qualification</td>
+    <td>
+      <label for="district"></label>
+        {{ var.qualification }}
+    </td>
+  </tr>
+
+  <tr>
+    <td>Email</td>
+    <td>
+      <label for="email"></label>
+{{ var.email }}      </td>
+  </tr>
+  <tr>
+    <td>Place</td>
+    <td>
+      <label for="place"></label>
+{{ var.place }}      </td>
+  </tr>
+  <tr>
+    <td>Pin</td>
+    <td>
+      <label for="pin"></label>
+{{ var.pin }}      </td>
+  </tr>
+  <tr>
+    <td>Post</td>
+    <td>
+      <label for="post"></label>
+{{ var.post }}      </td>
+  </tr>
+  <tr>
+    <td>District</td>
+    <td>
+      <label for="district"></label>
+{{ var.district }}      </td>
+  </tr>
+        <tr>
+    <td>Dob</td>
+    <td>
+      <label for="district"></label>
+      <input type="date" name="date" id="" />
+    </td>
+  </tr>
+
+        <tr>
+    <td>image</td>
+    <td>
+      <label for="district"></label>
+      <input type="file" name="image" id="" />
+    </td>
+  </tr>
+        <tr>
+    <td>Id Proof</td>
+    <td>
+      <label for="district"></label>
+      <input type="file" name="proof" id="" />
+    </td>
+  </tr>
+
+
+
+
+</table>
+</form>
+
+</body>
+</html>
